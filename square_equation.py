@@ -18,28 +18,23 @@
 #
 
 
-
-
-
 def square_equation(a, b, c):
-    if (a == 0):
-        if (b == 0):
-            if (c!=0):
+    if a == 0:
+        if b == 0:
+            if c != 0:
                 return None, None
             else:
                 return "ALL"
-        s1 = -c/b
-        return (s1, None)
+        s1 = -c / b
+        return s1, None
     else:
         s1 = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
         s2 = (-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
-        return (s1, s2)
+        return s1, s2
 
 
 assert square_equation(1, 2, 1) == (-1, -1)
 assert square_equation(1, -2, 1) == (1, 1)
-assert square_equation(0,  1,  1 ) == (-1, None)
-assert square_equation(0,  0,  1 ) == (None, None)
-assert square_equation(0,  0,  0) == "ALL"
-
-
+assert square_equation(0, 1, 1) == (-1, None)
+assert square_equation(0, 0, 1) == (None, None)
+assert square_equation(0, 0, 0) == "ALL"
