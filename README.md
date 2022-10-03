@@ -1,1 +1,1 @@
-Здесь будут учебные задачи
+This is repo for my tasks
