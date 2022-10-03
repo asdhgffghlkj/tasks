@@ -1,20 +1,31 @@
-def array_maximum(arr):
+from typing import Iterable
+from typing import Optional
 
-    if len(arr) == 0:
+
+def array_maximum(array: Iterable[int]):
+    """
+    Максимальный элемент последовательности чисел
+    :param array: Последовательность чисел
+    :return: Значение максимального элемента последовательности
+    """
+    # your code here
+    if (len(array)==0):
         return None
-    lead = arr[0]
-    for elem in arr:
-        if (elem>lead):
-            lead=elem
+    lead = array[0]
+    for i in range(len(array)):
+        current = array[i]
+        if (current > lead):
+            lead = current
     return lead
 
-# for (int i = 0; i < N; i++) {
-#     elem = arr[i]
-#
 
-
-assert array_maximum((1, 3, 5)) == 5
-assert array_maximum((1, 3, 3)) == 3
-assert array_maximum((3, 3, 3)) == 3
-assert array_maximum((1,)) == 1
-assert array_maximum(tuple()) == None
+if __name__ == "__main__":
+    assert array_maximum([]) is None
+    assert array_maximum([1]) == 1
+    assert array_maximum([2]) == 2
+    assert array_maximum([-1, 1]) == 1
+    assert array_maximum([1, -1]) == 1
+    assert array_maximum([1, 1]) == 1
+    assert array_maximum([-1, -1]) == -1
+    assert array_maximum([1, 2, 1]) == 2
+    assert array_maximum([10, 0, 0, 1, 2, 3]) == 10
