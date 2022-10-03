@@ -1,6 +1,6 @@
 def is_camel_case(string: str, allow_one_word: bool = True) -> bool:
     """
-    Determine if the string spelled in lowerCamelCase or not
+    Determine if the string spelled in CamelCase or not
     More info: https://en.wikipedia.org/wiki/Camel_case
     :param string: Sequence of symbols to check on CamelCase
     :param allow_one_word: Flag to determine one-word string as correct CamelCase string
