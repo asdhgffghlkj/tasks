@@ -3,7 +3,21 @@ def is_lower_camel_case(word: str, allow_one_word: bool = True) -> bool:
     Determine if the word spelled in lowerCamelCase or not
     More info: https://en.wikipedia.org/wiki/Camel_case
     """
-    pass
+    symblist = list(word)
+    capcount = 0
+    if symblist[0].isupper():
+        return 0
+    for i in range(len(symblist)):
+        symbol = symblist[i]
+        if symbol.isalpha():
+            if symbol.isupper():
+                capcount+=1
+        else:
+            return 0
+    if capcount == 0:
+        if allow_one_word==False:
+            return 0
+    return 1
 
 
 if __name__ == "__main__":
