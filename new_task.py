@@ -7,8 +7,7 @@ def is_lower_camel_case(word: str, allow_one_word: bool = True) -> bool:
     capcount = 0
     if symblist[0].isupper():
         return 0
-    for i in range(len(symblist)):
-        symbol = symblist[i]
+    for symbol in symblist:
         if symbol.isalpha():
             if symbol.isupper():
                 capcount+=1
